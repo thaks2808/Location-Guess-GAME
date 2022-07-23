@@ -73,7 +73,8 @@ class Game:
 
     def start_game(self):
         game_running = True
-        print("The Guess skills Game")
+        Player_name = input("Dear Player, Please Enter your name:   ")
+        print("The Location Guess skill Game")
         self.set_cards()
         while game_running:
             self.create_grid()
@@ -81,12 +82,12 @@ class Game:
             guess2 = self.check_location("second")
             if self.check_match(guess1, guess2):
                 if self.check_win():
-                    print("Congrats!! You have guessed them all!")
+                    print("Congrats!! {} You have guessed them all!".format(Player_name))
                     self.create_grid()
                     game_running = False
             else:
                 input("Those cards are not matched. Press Enter to continue")
-        print("GAME OVER !!!!!!!!!!!")           
+        print("GAME OVER !!!!!!!!!!!")
 
 #dunder main
 if __name__ == '__main__':
